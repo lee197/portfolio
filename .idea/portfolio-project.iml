@@ -16,6 +16,25 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery-3.0.0" level="application" />
+    <orderEntry type="library" name="jquery-migrate-3.0.0" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="jquery.singlepagenav" level="application" />
+    <orderEntry type="library" name="jquery.magnific-popup" level="application" />
+    <orderEntry type="library" name="owl.carousel" level="application" />
+    <orderEntry type="library" name="jquery.stellar" level="application" />
+    <orderEntry type="library" name="jquery.waypoints" level="application" />
+    <orderEntry type="library" name="typed" level="application" />
+    <orderEntry type="library" name="isotope.pkgd" level="application" />
+    <orderEntry type="library" name="validator" level="application" />
+    <orderEntry type="library" name="custom" level="application" />
+    <orderEntry type="library" name="jquery.counterup" level="application" />
+    <orderEntry type="library" name="79c6bed9d10f2a0c766541ee39378dd7575a9591" level="application" />
+    <orderEntry type="library" name="magnific-popup" level="application" />
+    <orderEntry type="library" name="fd06a7dbf6fcde7e689595d4b6f0a76ee00250ec" level="application" />
+    <orderEntry type="library" name="html5shiv" level="application" />
+    <orderEntry type="library" name="responsive" level="application" />
+    <orderEntry type="library" name="style" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />
