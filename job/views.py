@@ -1,9 +1,14 @@
 from django.shortcuts import render, get_object_or_404
-from job.models import Job
+from job.models import Job, Person, Skill, Category
 
 
 def index(request):
-    return render(request, 'jobs/index.html')
+    lee = Person.objects.get(id=1)
+    skills = Skill.objects
+    categories = Category.objects
+    return render(request, 'jobs/index.html', {'person': lee,
+                                               'skills': skills,
+                                               'categories': categories})
 
 
 def home(request):
