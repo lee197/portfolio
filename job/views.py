@@ -1,21 +1,25 @@
 from django.shortcuts import render, get_object_or_404
-from job.models import Job, Person, Skill, Category
+from job.models import Job, Person, Skill, Category, Works, Advices
 
 
 def index(request):
     lee = Person.objects.get(id=1)
     skills = Skill.objects
     categories = Category.objects
-    return render(request, 'jobs/index.html', {'person': lee,
-                                               'skills': skills,
-                                               'categories': categories})
+    works = Works.objects
+    advices = Advices.objects
+    return render(request, 'index.html', {'person': lee,
+                                          'skills': skills,
+                                          'categories': categories,
+                                          'works': works,
+                                          'advices': advices})
 
 
 def home(request):
     jobs = Job.objects
-    return render(request, 'jobs/home.html', {'jobs': jobs})
+    return render(request, 'home.html', {'jobs': jobs})
 
 
 def detail(request, job_id):
     job_detail = get_object_or_404(Job, pk=job_id)
-    return render(request, 'jobs/detail.html', {'job': job_detail})
+    return render(request, 'detail.html', {'job': job_detail})
