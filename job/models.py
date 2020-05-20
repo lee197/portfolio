@@ -1,6 +1,24 @@
 from django.db import models
 
 
+class Advices(models.Model):
+    name = models.CharField(max_length=50, default='fudi')
+    description = models.CharField(max_length=500, default='fudi')
+    rank = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+
+
+class Works(models.Model):
+    name = models.CharField(max_length=50, default='fudi')
+    work_image = models.ImageField(upload_to='images/', default='images/0.jpg')
+    type = models.CharField(max_length=50, default='iOS')
+
+    def __str__(self):
+        return self.name
+
+
 class Category(models.Model):
     category_name = models.CharField(max_length=20, default='language')
 
