@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class Experience(models.Model):
+    ex_image = models.ImageField(upload_to='images/', default='images/0.jpg')
+    company_name = models.CharField(max_length=50, default='fudi')
+    ex_description = models.CharField(max_length=500, default='fudi')
+    date = models.DateField()
+    position = models.CharField(max_length=5, default='left')
+
+    def __str__(self):
+        return self.company_name
+
+
 class Advices(models.Model):
     name = models.CharField(max_length=50, default='fudi')
     description = models.CharField(max_length=500, default='fudi')
