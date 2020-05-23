@@ -49,6 +49,8 @@
 		<!--[if lt IE 9]-->
 		<script src="{%  static 'js/html5shiv.min.js' %}"></script>
 		<!--[endif]-->
+
+
 	</head>
 	<body>
 
@@ -99,7 +101,7 @@
 			<!-- ====== End Navgition ======  -->
 
 			<!-- ====== Header ======  -->
-			<header style="background: url('{% static 'page.jpg' %}')" id="home" class="header" data-stellar-background-ratio="0.5">
+			<header style="background: url('{{ person.main_image.url }}')" id="home" class="header" data-stellar-background-ratio="0.5">
 				<!-- header content -->
 				<div class="caption v-middle text-center">
 					<h3>I Am ,</h3>
@@ -123,7 +125,7 @@
 					 		<!-- hero image -->
 							<div class="col-md-4">
 								<div class="hero-img">
-									<img src="{% static 'leeqi.jpg' %}" alt="image">
+									<img src="{{ person.personal_image.url }}" alt="image">
 								</div>
 							</div>
 
@@ -248,46 +250,76 @@
 			<!--====== End Portfolio ======-->
 
 			<!--====== Numbers ======-->
-			<div class="numbers section-padding">
-				<div class="container">
-					<div class="row text-center">
+  <section id="cd-timeline" class="cd-container timeline_body">
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-picture">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
+      </div> <!-- cd-timeline-img -->
 
-						<!-- number items -->
-						<div class="col-md-3 col-sm-6">
-							<div class="numb-item">
-								<span class="icon-happy"></span>
-								<h3 class="counter">234</h3>
-								<p>HAPPY CLIENTS</p>
-							</div>
-						</div>
+      <div class="cd-timeline-content">
+          <h3>Amazon Cork</h3>
 
-						<div class="col-md-3 col-sm-6">
-							<div class="numb-item">
-								<span class="icon-layers"></span>
-								<h3 class="counter">1484</h3>
-								<p>COMPLETE PROJECT</p>
-							</div>
-						</div>
+        <timeline_h2>Investigation Specialist</timeline_h2>
+        <p>Seller’s first Point of Contact for any verification query</p>
+          <p>Detailed Verification of information provided by seller registering on the Amazon Platform.</p>
+        <p>Liaising with Risk Control Analyst for the identification and detection of suspicious activity</p>
+          <p>Make calls to seller with regards to any difficulties in KYC process</p>
 
-						<div class="col-md-3 col-sm-6">
-							<div class="numb-item">
-								<span class="icon-strategy"></span>
-								<h3 class="counter">736</h3>
-								<p>CUP OF COFFIE</p>
-							</div>
-						</div>
+        <span class="cd-date">2015/June/14 -- 2016/July/15</span>
+      </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
 
-						<div class="col-md-3 col-sm-6">
-							<div class="numb-item">
-								<span class="icon-trophy"></span>
-								<h3 class="counter">7</h3>
-								<p>AWARDS</p>
-							</div>
-						</div>
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-movie">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+      </div> <!-- cd-timeline-img -->
 
-					</div>
-				</div>
-			</div>
+      <div class="cd-timeline-content">
+          <h3>Fudi&more</h3>
+         <timeline_h2>iOS Engineer</timeline_h2>
+          <p>IDE: XCode, Language: Swift, Objective-C, Database: SQLite</p>
+          <p>Developed the IOS application---"Fudi&more" for user to place order, browse product list</p>
+          <p>Developed the IOS application---“Fudi&more Driver” to manage deliveries</p>
+          <p>Supporting all phases from design, implementation, through test and App Store submissions.</p>
+
+        <span class="cd-date">2016/July/15 -- 2018/June/1</span>
+      </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-picture">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
+      </div> <!-- cd-timeline-img -->
+
+      <div class="cd-timeline-content">
+          <h3>Boonray Technology</h3>
+         <timeline_h2>iOS/Android Engineer</timeline_h2>
+          <p>Designed and Developed iOS apps to operate DJI drone to inspect the skyscraper wall space, signal tower and water tower</p>
+          <p>Designed and Developed Android apps to operate DJI drone to inspect the solar panel and river pollution</p>
+          <p>Developed Android app with Jetpack API framework(Room, ViewModel, LiveData), iOS app with RxSwift and MVVM</p>
+          <p>Designed Azure IOT structure to collect and show instant drone state info, drone live streaming function with WebRtc</p>
+        <span class="cd-date">2018/Nov/11 -- 2019/Oct/15</span>
+      </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-location">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
+      </div> <!-- cd-timeline-img -->
+
+      <div class="cd-timeline-content">
+          <h3>Lyne Chemicals LTD</h3>
+         <timeline_h2>Software Engineer</timeline_h2>
+
+        <p>Designed and developed iOS survey app Swift (MVVM), Realm, Github-Action, Fastlane</p>
+          <p>Designed and develop Restful API with Python Django Restful Framework, PostgreSQL, Github-Action, Heroku</p>
+          <p>Designed and developed company website: http://www.lynechemicals.com/ with Django, HTML/CSS</p>
+
+        <span class="cd-date">2020/Jan/11 -- Present</span>
+      </div> <!-- cd-timeline-content -->
+    </div> <!-- cd-timeline-block -->
+
+  </section> <!-- cd-timeline -->
 			<!--====== End Numbers ======-->
 
 			<!--====== Clients ======-->
@@ -456,5 +488,42 @@
       	<!-- custom js -->
       	<script src="{%  static 'js/custom.js' %}"></script>
 
+    <script>
+
+jQuery(document).ready(function ($) {
+  var $timeline_block = $(".cd-timeline-block");
+
+  //hide timeline blocks which are outside the viewport
+  $timeline_block.each(function () {
+    if (
+      $(this).offset().top >
+      $(window).scrollTop() + $(window).height() * 0.75
+    ) {
+      $(this)
+        .find(".cd-timeline-img, .cd-timeline-content")
+        .addClass("is-hidden");
+    }
+  });
+
+  //on scolling, show/animate timeline blocks when enter the viewport
+  $(window).on("scroll", function () {
+    $timeline_block.each(function () {
+      if (
+        $(this).offset().top <=
+          $(window).scrollTop() + $(window).height() * 0.75 &&
+        $(this).find(".cd-timeline-img").hasClass("is-hidden")
+      ) {
+        $(this)
+          .find(".cd-timeline-img, .cd-timeline-content")
+          .removeClass("is-hidden")
+          .addClass("bounce-in");
+      }
+    });
+  });
+});
+
+</script>
+
 	</body>
 </html>
+
