@@ -1,6 +1,16 @@
 from django.db import models
 
 
+class Codes(models.Model):
+    code_image = models.ImageField(upload_to='images/', default='images/0.jpg')
+    code_name = models.CharField(max_length=50, default='fudi')
+    code_description = models.CharField(max_length=500, default='fudi')
+    code_url = models.CharField(max_length=500, default='fudi')
+
+    def __str__(self):
+        return self.code_name
+
+
 class Experience(models.Model):
     ex_image = models.ImageField(upload_to='images/', default='images/0.jpg')
     company_name = models.CharField(max_length=50, default='fudi')

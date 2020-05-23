@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from job.models import Job, Person, Skill, Category, Works, Advices, Experience
+from job.models import Job, Person, Skill, Category, Works, Advices, Experience, Codes
 
 
 def index(request):
@@ -9,12 +9,14 @@ def index(request):
     works = Works.objects
     advices = Advices.objects
     experiences = Experience.objects
+    codes = Codes.objects
     return render(request, 'index.html', {'person': lee,
                                           'skills': skills,
                                           'categories': categories,
                                           'works': works,
                                           'advices': advices,
-                                          'experiences': experiences})
+                                          'experiences': experiences,
+                                          'codes': codes})
 
 
 def home(request):

@@ -1,5 +1,4 @@
 
-
 $(function (){
 
     "use strict";
@@ -13,6 +12,22 @@ $(function (){
         offset:60
     });
 
+      var $timeline_block = $('.cd-timeline-block');
+
+	//hide timeline blocks which are outside the viewport
+	$('.cd-timeline-block').each(function(){
+		if($(this).offset().top > wind.scrollTop()+wind.height()*0.75) {
+			$(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+		}
+	});
+
+    wind.on('scroll', function(){
+		$('.cd-timeline-block').each(function(){
+			if( $(this).offset().top <= wind.scrollTop()+wind.height()*0.75 && $(this).find('.cd-timeline-img').hasClass('is-hidden') ) {
+				$(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
+			}
+		});
+	});
 
 
     // navbar scrolling background
@@ -43,7 +58,7 @@ $(function (){
 
     //smooth button scroll
     $('.button-scroll').on('click', function(){
-      
+
         var scrollTo = $(this).attr('data-scrollTo');
 
         $('body, html').animate({
@@ -56,9 +71,9 @@ $(function (){
     // progress bar
     wind.on('scroll', function () {
         $(".progress-main .progress-bar").each(function () {
-            var bottom_of_object = 
+            var bottom_of_object =
             $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = 
+            var bottom_of_window =
             $(window).scrollTop() + $(window).height();
             var myVal = $(this).attr('data-value');
             if(bottom_of_window > bottom_of_object) {
@@ -182,3 +197,4 @@ $(window).on("load",function (){
     });
 
 });
+

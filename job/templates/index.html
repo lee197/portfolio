@@ -1,529 +1,545 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en"> <!--<![endif]-->
-  {% load static %}
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!-- Always force latest IE rendering engine -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<meta name="description" content="Django is a responsive creative template">
-		<meta name="keywords" content="portfolio, personal, corporate, business, parallax, creative, agency">
+    <meta name="description" content="Django is a responsive creative template">
+    <meta name="keywords" content="portfolio, personal, corporate, business, parallax, creative, agency">
 
-		<!-- Title -->
-		<title>Lee's portfolio</title>
+    <!-- Title -->
+    <title>Lee's portfolio</title>
 
-		<!-- Google fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600,700,900" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Norican" rel="stylesheet">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,600,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Norican" rel="stylesheet">
 
-		<!-- Font awesome Core CSS -->
-		<link rel="stylesheet" href="{%  static 'css/font-awesome.min.css' %}">
-		<link rel="stylesheet" href="{%  static 'css/et-line.css' %}">
+    <!-- Font awesome Core CSS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/et-line.css' %}">
 
-		<!-- bootstrap css -->
-		<link rel="stylesheet" href="{%  static 'css/bootstrap.min.css' %}">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 
-		<!-- magnific-popup CSS -->
-		<link rel="stylesheet" href="{%  static 'css/magnific-popup.css' %}">
+    <!-- magnific-popup CSS -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
 
-		<!-- owl carousel CSS -->
-		<link rel="stylesheet" href="{%  static 'css/owl.carousel.min.css' %}">
-		<link rel="stylesheet" href="{%  static 'css/owl.theme.default.min.css' %}">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
 
-		<!-- Custom style CSS -->
-		<link rel="stylesheet" href="{%  static 'css/style.css' %}">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-		<!-- responsive CSS -->
-		<link rel="stylesheet" href="{%  static 'css/responsive.css' %}">
+    <!-- responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 
-		<!--[if lt IE 9]-->
-		<script src="{%  static 'js/html5shiv.min.js' %}"></script>
-		<!--[endif]-->
-
-
-	</head>
-	<body>
-
-		<!-- ====== Preloader ======  -->
-	    <div class="loading">
-			<div class="spinner">
-			  <div class="rect1"></div>
-			  <div class="rect2"></div>
-			  <div class="rect3"></div>
-			  <div class="rect4"></div>
-			  <div class="rect5"></div>
-			</div>
-		</div>
-		<!-- ======End Preloader ======  -->
-
-		<main>
-
-			<!-- ====== Navgition ======  -->
-			<nav class="navbar">
-			  <div class="container">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			      <!-- logo -->
-			      <a class="navbar-brand" href="#">Lee</a>
-			    </div>
-
-			    <!-- Collect the nav links, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-				  <!-- links -->
-			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="#home" class="active">Home</a></li>
-			        <li><a href="#about">About</a></li>
-			        <li><a href="#services">Services</a></li>
-			        <li><a href="#portfolio">Work</a></li>
-			        <li><a href="#clients">Clients</a></li>
-			        <li><a href="#contact">Contact</a></li>
-			      </ul>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container -->
-			</nav>
-			<!-- ====== End Navgition ======  -->
-
-			<!-- ====== Header ======  -->
-			<header style="background: url('{{ person.main_image.url }}')" id="home" class="header" data-stellar-background-ratio="0.5">
-				<!-- header content -->
-				<div class="caption v-middle text-center">
-					<h3>I Am ,</h3>
-					<h1>{{ person.candidate_name }}</h1>
-					<h4>I'm A <span></span> </h4>
-				</div>
-
-				<div class="button-scroll" data-scrollTo="about"><span></span></div>
-			</header>
-			<!-- ====== End Header ======  -->
-
-			<!-- ====== hero ======  -->
-			<section id="about" class="hero section-padding">
-				<div class="container">
-
-					<div class="row">
-
-						<!-- hero block -->
-						<div class="hero-block">
-
-					 		<!-- hero image -->
-							<div class="col-md-4">
-								<div class="hero-img">
-									<img src="{{ person.personal_image.url }}" alt="image">
-								</div>
-							</div>
-
-							<div class="col-md-offset-1 col-md-6">
-								<div class="hero-item">
-									<h5 class="mb-20">{{ person.short_summary }}</h5>
-                                    <p class="mb-20">{{ person.summary }}</p>
-
-									<button><span><i class="fa fa-download" aria-hidden="true"></i></span>  Resume</button>
-									<button>Hire Me</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="clear-fix"></div>
-
-				<!-- services -->
-				<div id="services" class="services section-padding">
-					<div class="container">
-
-						<!-- section header -->
-						<div class="section-head text-center">
-							<h5 class="tit">I can give advices on: </h5>
-						</div>
-
-						<div class="row">
-                            {% for advice in advices.all %}
-
-							<!-- services items -->
-							<div class="serv-row">
-								<div class="col-md-4">
-									<div class="serv-item">
-										<span>{{ advice.rank }}</span>
-										<h6>{{ advice.name }}</h6>
-										<p>{{ advice.description }}</p>
-									</div>
-								</div>
-							</div>
-                            {% endfor %}
+    <!--[if lt IE 9]-->
+    <script src="{% static 'js/html5shiv.min.js' %}"></script>
+    <!--[endif]-->
 
 
-						</div>
-					</div>
-				</div>
+</head>
+<body>
 
-					<div class="container">
-					<div class="row">
-                    {% for category in categories.all %}
+<!-- ====== Preloader ======  -->
+<div class="loading">
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+<!-- ======End Preloader ======  -->
 
-						<!-- skills -->
-						<div class="skills">
-							<div class="col-md-4">
-								<div class="hero-progress">
-                                    <h5>{{ category.category_name }}</h5>
+<main>
 
-                                  {% for skill in skills.all %}
-                                      {% if skill.category == category.category_name %}
+    <!-- ====== Navgition ======  -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- logo -->
+                <a class="navbar-brand" href="#">Lee</a>
+            </div>
 
-									<div class="progress-item">
-										<p>{{ skill.skill_name }}<span class="pull-right">{{ skill.percentage }}%</span></p>
-										<div class="progress-main"><span class="progress-bar"  data-value="{{ skill.percentage }}%"></span></div>
-									</div>
-                                      {% endif %}
+            <!-- Collect the nav links, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                                  {% endfor %}
+                <!-- links -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Work</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+    <!-- ====== End Navgition ======  -->
 
-								</div>
-							</div>
+    <!-- ====== Header ======  -->
+    <header style="background: url('{{ person.main_image.url }}')" id="home" class="header"
+            data-stellar-background-ratio="0.5">
+        <!-- header content -->
+        <div class="caption v-middle text-center">
+            <h3>I Am ,</h3>
+            <h1>{{ person.candidate_name }}</h1>
+            <h4>I'm A <span></span></h4>
+        </div>
 
-						</div>
+        <div class="button-scroll" data-scrollTo="about"><span></span></div>
+    </header>
+    <!-- ====== End Header ======  -->
+
+    <!-- ====== about container ======  -->
+    <section id="about" class="hero section-padding">
+        <div class="container">
+
+            <div class="row">
+
+                <!-- about block -->
+                <div class="hero-block">
+
+                    <!-- hero image -->
+                    <div class="col-md-4">
+                        <div class="hero-img">
+                            <img src="{{ person.personal_image.url }}" alt="image">
+                        </div>
+                    </div>
+
+                    <div class="col-md-offset-1 col-md-6">
+                        <div class="hero-item">
+                            <h5 class="mb-20">{{ person.short_summary }}</h5>
+                            <p class="mb-20">{{ person.summary }}</p>
+
+                            <button><span><i class="fa fa-download" aria-hidden="true"></i></span> Resume</button>
+                            <button>Hire Me</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end: about block -->
+
+        <div class="clear-fix"></div>
+
+        <!-- What I can give advice -->
+        <div id="services" class="services section-padding">
+            <div class="container">
+
+                <!-- section header -->
+                <div class="section-head text-center">
+                    <h5 class="tit">I can give advices on: </h5>
+                </div>
+
+                <div class="row">
+                    {% for advice in advices.all %}
+
+                        <!-- services items -->
+                        <div class="serv-row">
+                            <div class="col-md-4">
+                                <div class="serv-item">
+                                    <span>{{ advice.rank }}</span>
+                                    <h6>{{ advice.name }}</h6>
+                                    <p>{{ advice.description }}</p>
+                                </div>
+                            </div>
+                        </div>
                     {% endfor %}
 
-					</div>
-				</div>
-			</section>
-			<!-- ====== End hero ======  -->
-
-			<!--====== Portfolio ======-->
-			<section id="portfolio" class="portfolio section-padding">
-
-				<div class="container">
-
-				<!-- section header -->
-				<div class="section-head text-center">
-					<h5 class="tit">My Work !</h5>
-				</div>
-				<div class="row">
-
-					<!-- filter links -->
-					<div class="filtering text-center mb-50">
-						<span data-filter='*' class="active">All</span>
-						<span data-filter='.ios'>iOS</span>
-						<span data-filter='.android'>Android</span>
-						<span data-filter='.web'>Web</span>
-					</div>
-
-					<!-- gallery -->
-					<div class="gallery text-center">
-                        {% for work in works.all %}
-
-						<!-- gallery item -->
-						<div class="col-md-4 item-img {{ work.type }}" >
-							<img src="{{ work.work_image.url }}" alt="image">
-							<div class="item-img-overlay">
-								<span class="v"></span>
-								<span class="x"></span>
-								<div class="v-middle">
-									<a href="{{ work.work_image.url }}"><span class="icon-scope"></span></a>
-									<h5>{{ work.name }}</h5>
-								</div>
-							</div>
-						</div>
-                        {% endfor %}
-
-
-					</div>
-				</div>
-				</div>
-			</section>
-			<!--====== End Portfolio ======-->
-
-			<!--====== Numbers ======-->
-  <section id="cd-timeline" class="cd-container timeline_body">
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-picture">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
-      </div> <!-- cd-timeline-img -->
-
-      <div class="cd-timeline-content">
-          <h3>Amazon Cork</h3>
-
-        <timeline_h2>Investigation Specialist</timeline_h2>
-        <p>Seller’s first Point of Contact for any verification query</p>
-          <p>Detailed Verification of information provided by seller registering on the Amazon Platform.</p>
-        <p>Liaising with Risk Control Analyst for the identification and detection of suspicious activity</p>
-          <p>Make calls to seller with regards to any difficulties in KYC process</p>
-
-        <span class="cd-date">2015/June/14 -- 2016/July/15</span>
-      </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-movie">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
-      </div> <!-- cd-timeline-img -->
-
-      <div class="cd-timeline-content">
-          <h3>Fudi&more</h3>
-         <timeline_h2>iOS Engineer</timeline_h2>
-          <p>IDE: XCode, Language: Swift, Objective-C, Database: SQLite</p>
-          <p>Developed the IOS application---"Fudi&more" for user to place order, browse product list</p>
-          <p>Developed the IOS application---“Fudi&more Driver” to manage deliveries</p>
-          <p>Supporting all phases from design, implementation, through test and App Store submissions.</p>
-
-        <span class="cd-date">2016/July/15 -- 2018/June/1</span>
-      </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-picture">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
-      </div> <!-- cd-timeline-img -->
-
-      <div class="cd-timeline-content">
-          <h3>Boonray Technology</h3>
-         <timeline_h2>iOS/Android Engineer</timeline_h2>
-          <p>Designed and Developed iOS apps to operate DJI drone to inspect the skyscraper wall space, signal tower and water tower</p>
-          <p>Designed and Developed Android apps to operate DJI drone to inspect the solar panel and river pollution</p>
-          <p>Developed Android app with Jetpack API framework(Room, ViewModel, LiveData), iOS app with RxSwift and MVVM</p>
-          <p>Designed Azure IOT structure to collect and show instant drone state info, drone live streaming function with WebRtc</p>
-        <span class="cd-date">2018/Nov/11 -- 2019/Oct/15</span>
-      </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-
-    <div class="cd-timeline-block">
-      <div class="cd-timeline-img cd-location">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
-      </div> <!-- cd-timeline-img -->
-
-      <div class="cd-timeline-content">
-          <h3>Lyne Chemicals LTD</h3>
-         <timeline_h2>Software Engineer</timeline_h2>
-
-        <p>Designed and developed iOS survey app Swift (MVVM), Realm, Github-Action, Fastlane</p>
-          <p>Designed and develop Restful API with Python Django Restful Framework, PostgreSQL, Github-Action, Heroku</p>
-          <p>Designed and developed company website: http://www.lynechemicals.com/ with Django, HTML/CSS</p>
-
-        <span class="cd-date">2020/Jan/11 -- Present</span>
-      </div> <!-- cd-timeline-content -->
-    </div> <!-- cd-timeline-block -->
-
-  </section> <!-- cd-timeline -->
-			<!--====== End Numbers ======-->
-
-			<!--====== Clients ======-->
-			<section id="clients" class="clients section-padding">
-				<div class="container">
-					<div class="row">
-
-						<!-- clients carousel -->
-						<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-							<div class="client-say text-center">
-
-								<h5 class="tit mb-30">Reviews !</h5>
-
-								<div class="owl-carousel owl-theme">
-
-									<!-- client item -->
-									<div class="client-item text-center">
-
-										<p>Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue, risus utaliquam dapibus. Thanks!.</p>
-
-										<h6>___ John Doe, Google Inc. ___</h6>
-									</div>
-
-									<!-- client item -->
-									<div class="client-item text-center">
-
-										<p>Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue, risus utaliquam dapibus. Thanks!.</p>
-
-										<h6>___ John Doe, Google Inc. ___</h6>
-									</div>
-
-									<!-- client item -->
-									<div class="client-item text-center">
-
-										<p>Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue, risus utaliquam dapibus. Thanks!.</p>
-
-										<h6>___ John Doe, Google Inc. ___</h6>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--====== End Clients ======-->
-
-			<!--====== Contact ======-->
-			<section id="contact" class="contact section-padding">
-
-				<!-- section header -->
-				<div class="section-head text-center">
-					<h5 class="tit">Say Hello !</h5>
-				</div>
-
-				<!-- form -->
-				<div class="main-form">
-					<div class="container">
-						<div class="row">
-							<!-- contact form -->
-							<div class="col-md-offset-2 col-md-8">
-								 <form class="form" id="contact-form" method="post" action="contact.php" role="form">
-			                        <div class="messages"></div>
-
-			                        <div class="controls">
-
-			                            <div class="row">
-			                                <div class="col-md-6">
-			                                    <div class="form-group">
-			                                        <input id="form_name" type="text" name="name" placeholder="Name *" required="required" data-error="Firstname is required.">
-			                                        <div class="help-block with-errors"></div>
-			                                    </div>
-			                                </div>
-
-			                                 <div class="col-md-6">
-			                                    <div class="form-group">
-			                                        <input id="form_email" type="email" name="email" placeholder="Email *" required="required" data-error="Valid email is required.">
-			                                        <div class="help-block with-errors"></div>
-			                                    </div>
-			                                </div>
-			                            </div>
-			                            <div class="row">
-			                                <div class="col-md-12">
-			                                    <div class="form-group">
-			                                        <input id="form_subject" type="subject" name="subject" placeholder="Subject">
-			                                        <div class="help-block with-errors"></div>
-			                                    </div>
-			                                </div>
-			                            </div>
-			                            <div class="row">
-			                                <div class="col-md-12">
-			                                    <div class="form-group">
-			                                        <textarea id="form_message" name="message" placeholder="Message *" rows="4" required="required" data-error="Message."></textarea>
-			                                        <div class="help-block with-errors"></div>
-			                                    </div>
-			                                </div>
-			                                <div class="col-sm-4">
-			                                    <input type="submit" class="button" value="Send message">
-			                                </div>
-			                            </div>
-			                        </div>
-			                    </form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!--====== End Contact ======-->
-
-		</main>
-
-		<!--====== Footer ======-->
-		<footer>
-			<div class="container">
-
-				<div class="social-icon">
-					<span><i class="fa fa-facebook" aria-hidden="true"></i></span>
-					<span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-					<span><i class="fa fa-linkedin" aria-hidden="true"></i></span>
-					<span><i class="fa fa-github" aria-hidden="true"></i></span>
-				</div>
-
-				<p>Copy Right &copy; By LEE | All Right Reserved.</p>
-			</div>
-		</footer>
-		<!--====== End Footer ======-->
-
-
-
-		<!--====== js ======-->
-
-		<!-- jQuery -->
-		<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-		<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
-
-	  	<!-- bootstrap -->
-		<script src="{%  static 'js/bootstrap.min.js' %}"></script>
-
-		<!-- singlePageNav -->
-		<script src="{%  static 'js/jquery.singlePageNav.min.js' %}"></script>
-
-		<!-- magnific-popup -->
-		<script src="{%  static 'js/jquery.magnific-popup.min.js' %}"></script>
-
-		<!-- owl carousel -->
-		<script src="{%  static 'js/owl.carousel.min.js' %}"></script>
-
-		<!-- stellar js -->
-		<script src="{%  static 'js/jquery.stellar.min.js' %}"></script>
-
-      	<!-- jquery.waypoints.min js -->
-      	<script src="{%  static 'js/jquery.waypoints.min.js' %}"></script>
-
-      	<!-- jquery.counterup.min js -->
-      	<script src="{%  static 'js/jquery.counterup.min.js' %}"></script>
-
-      	<!-- typed js -->
-      	<script src="{%  static 'js/typed.js' %}"></script>
-
-      	<!-- isotope.pkgd.min js -->
-      	<script src="{%  static 'js/isotope.pkgd.min.js' %}"></script>
-
-      	<!-- validator js -->
-      	<script src="{%  static 'js/validator.js' %}"></script>
-
-      	<!-- custom js -->
-      	<script src="{%  static 'js/custom.js' %}"></script>
-
-    <script>
-
-jQuery(document).ready(function ($) {
-  var $timeline_block = $(".cd-timeline-block");
-
-  //hide timeline blocks which are outside the viewport
-  $timeline_block.each(function () {
-    if (
-      $(this).offset().top >
-      $(window).scrollTop() + $(window).height() * 0.75
-    ) {
-      $(this)
-        .find(".cd-timeline-img, .cd-timeline-content")
-        .addClass("is-hidden");
-    }
-  });
-
-  //on scolling, show/animate timeline blocks when enter the viewport
-  $(window).on("scroll", function () {
-    $timeline_block.each(function () {
-      if (
-        $(this).offset().top <=
-          $(window).scrollTop() + $(window).height() * 0.75 &&
-        $(this).find(".cd-timeline-img").hasClass("is-hidden")
-      ) {
-        $(this)
-          .find(".cd-timeline-img, .cd-timeline-content")
-          .removeClass("is-hidden")
-          .addClass("bounce-in");
-      }
+
+                </div>
+            </div>
+        </div>
+        <!--====== End: What I can give advices to ======-->
+
+
+        <!--====== MY Experience ======-->
+
+        <section id="cd-timeline" class="cd-container timeline_body section-padding">
+            <div class="section-head text-center">
+                <h5 class="tit">My Experience !</h5>
+            </div>
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
+                </div>
+
+                <div class="cd-timeline-content">
+                    <h3>Amazon Cork</h3>
+
+                    <timeline_h2>Investigation Specialist</timeline_h2>
+                    <p>Seller’s first Point of Contact for any verification query</p>
+                    <p>Detailed Verification of information provided by seller registering on the Amazon Platform.</p>
+                    <p>Liaising with Risk Control Analyst for the identification and detection of suspicious
+                        activity</p>
+                    <p>Make calls to seller with regards to any difficulties in KYC process</p>
+
+                    <span class="cd-date">2015/June/14 -- 2016/July/15</span>
+                </div>
+            </div>
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-movie">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+                </div>
+
+                <div class="cd-timeline-content">
+                    <h3>Fudi&more</h3>
+                    <timeline_h2>iOS Engineer</timeline_h2>
+                    <p>IDE: XCode, Language: Swift, Objective-C, Database: SQLite</p>
+                    <p>Developed the IOS application---"Fudi&more" for user to place order, browse product list</p>
+                    <p>Developed the IOS application---“Fudi&more Driver” to manage deliveries</p>
+                    <p>Supporting all phases from design, implementation, through test and App Store submissions.</p>
+
+                    <span class="cd-date">2016/July/15 -- 2018/June/1</span>
+                </div>
+            </div>
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-picture">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
+                </div>
+
+                <div class="cd-timeline-content">
+                    <h3>Boonray Technology</h3>
+                    <timeline_h2>iOS/Android Engineer</timeline_h2>
+                    <p>Designed and Developed iOS apps to operate DJI drone to inspect the skyscraper wall space, signal
+                        tower and water tower</p>
+                    <p>Designed and Developed Android apps to operate DJI drone to inspect the solar panel and river
+                        pollution</p>
+                    <p>Developed Android app with Jetpack API framework(Room, ViewModel, LiveData), iOS app with RxSwift
+                        and MVVM</p>
+                    <p>Designed Azure IOT structure to collect and show instant drone state info, drone live streaming
+                        function with WebRtc</p>
+                    <span class="cd-date">2018/Nov/11 -- 2019/Oct/15</span>
+                </div>
+            </div>
+
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img cd-location">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
+                </div>
+
+                <div class="cd-timeline-content">
+                    <h3>Lyne Chemicals LTD</h3>
+                    <timeline_h2>Software Engineer</timeline_h2>
+
+                    <p>Designed and developed iOS survey app Swift (MVVM), Realm, Github-Action, Fastlane</p>
+                    <p>Designed and develop Restful API with Python Django Restful Framework, PostgreSQL, Github-Action,
+                        Heroku</p>
+                    <p>Designed and developed company website: http://www.lynechemicals.com/ with Django, HTML/CSS</p>
+
+                    <span class="cd-date">2020/Jan/11 -- Present</span>
+                </div>
+            </div>
+
+        </section>
+        <!--====== End: MY Experience ======-->
+
+
+    </section>
+    <!--====== End: about container ======-->
+
+    <!--====== Portfolio ======-->
+    <section id="portfolio" class="portfolio section-padding">
+
+        <div class="container">
+
+            <!-- section header -->
+            <div class="section-head text-center">
+                <h5 class="tit">My Work !</h5>
+            </div>
+            <div class="row">
+
+                <!-- filter links -->
+                <div class="filtering text-center mb-50">
+                    <span data-filter='*' class="active">All</span>
+                    <span data-filter='.ios'>iOS</span>
+                    <span data-filter='.android'>Android</span>
+                    <span data-filter='.web'>Web</span>
+                </div>
+
+                <!-- gallery -->
+                <div class="gallery text-center">
+                    {% for work in works.all %}
+
+                        <!-- gallery item -->
+                        <div class="col-md-4 item-img {{ work.type }}">
+                            <img src="{{ work.work_image.url }}" alt="image">
+                            <div class="item-img-overlay">
+                                <span class="v"></span>
+                                <span class="x"></span>
+                                <div class="v-middle">
+                                    <a href="{{ work.work_image.url }}"><span class="icon-scope"></span></a>
+                                    <h5>{{ work.name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== End Portfolio ======-->
+
+    <section id="about" class="hero section-padding">
+
+        <!-- ====== skilss ======  -->
+
+        <div class="container">
+            <div class="section-head text-center">
+                <h5 class="tit">My Skills !</h5>
+            </div>
+            <div class="row">
+                {% for category in categories.all %}
+
+                    <!-- skills -->
+                    <div class="skills">
+                        <div class="col-md-4">
+                            <div class="hero-progress">
+                                <h5>{{ category.category_name }}</h5>
+
+                                {% for skill in skills.all %}
+                                    {% if skill.category == category.category_name %}
+
+                                        <div class="progress-item">
+                                            <p>{{ skill.skill_name }}<span
+                                                    class="pull-right">{{ skill.percentage }}%</span></p>
+                                            <div class="progress-main"><span class="progress-bar"
+                                                                             data-value="{{ skill.percentage }}%"></span>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+
+                                {% endfor %}
+
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+    <!-- ====== End skilss ======  -->
+
+    <!--====== Clients ======-->
+    <section id="clients" class="clients section-padding">
+        <div class="container">
+            <div class="section-head text-center">
+                <h5 class="tit">My Codes !</h5>
+            </div>
+            <div class="row">
+                {% for code in codes.all %}
+                    <div class="col-md-4 ">
+                        <a href="{{ code.code_url }}">
+                            <div class="card mb-4 shadow-sm code-section">
+                                <img class="card-img-top" src="{{ code.code_image.url }}">
+                                <div class="card-body">
+                                    <p class="card-title" style="font-size:20px">{{ code.code_name }}</p>
+                                    <p class="card-text">{{ code.code_description }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!--====== End Clients ======-->
+
+    <!--====== Contact ======-->
+    <section id="contact" class="contact section-padding">
+
+        <!-- section header -->
+        <div class="section-head text-center">
+            <h5 class="tit">Say Hello !</h5>
+        </div>
+
+        <!-- form -->
+        <div class="main-form">
+            <div class="container">
+                <div class="row">
+                    <!-- contact form -->
+                    <div class="col-md-offset-2 col-md-8">
+                        <form class="form" id="contact-form" method="post" action="contact.php" role="form">
+                            <div class="messages"></div>
+
+                            <div class="controls">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_name" type="text" name="name" placeholder="Name *"
+                                                   required="required" data-error="Firstname is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input id="form_email" type="email" name="email" placeholder="Email *"
+                                                   required="required" data-error="Valid email is required.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input id="form_subject" type="subject" name="subject"
+                                                   placeholder="Subject">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <textarea id="form_message" name="message" placeholder="Message *" rows="4"
+                                                      required="required" data-error="Message."></textarea>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="submit" class="button" value="Send message">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== End Contact ======-->
+
+</main>
+
+<!--====== Footer ======-->
+<footer>
+    <div class="container">
+
+        <div class="social-icon">
+            <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+            <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
+            <span><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+            <span><i class="fa fa-github" aria-hidden="true"></i></span>
+        </div>
+
+        <p>Copy Right &copy; By LEE | All Right Reserved.</p>
+    </div>
+</footer>
+<!--====== End Footer ======-->
+
+
+<!--====== js ======-->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+
+<!-- bootstrap -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!-- singlePageNav -->
+<script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+
+<!-- magnific-popup -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+
+<!-- owl carousel -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+<!-- stellar js -->
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+
+<!-- jquery.waypoints.min js -->
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+
+<!-- jquery.counterup.min js -->
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+
+<!-- typed js -->
+<script src="{% static 'js/typed.js' %}"></script>
+
+<!-- isotope.pkgd.min js -->
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+
+<!-- validator js -->
+<script src="{% static 'js/validator.js' %}"></script>
+
+<!-- custom js -->
+<script src="{% static 'js/custom.js' %}"></script>
+
+<script>
+
+    jQuery(document).ready(function ($) {
+        var $timeline_block = $(".cd-timeline-block");
+
+        //hide timeline blocks which are outside the viewport
+        $timeline_block.each(function () {
+            if (
+                $(this).offset().top >
+                $(window).scrollTop() + $(window).height() * 0.75
+            ) {
+                $(this)
+                    .find(".cd-timeline-img, .cd-timeline-content")
+                    .addClass("is-hidden");
+            }
+        });
+
+        //on scolling, show/animate timeline blocks when enter the viewport
+        $(window).on("scroll", function () {
+            $timeline_block.each(function () {
+                if (
+                    $(this).offset().top <=
+                    $(window).scrollTop() + $(window).height() * 0.75 &&
+                    $(this).find(".cd-timeline-img").hasClass("is-hidden")
+                ) {
+                    $(this)
+                        .find(".cd-timeline-img, .cd-timeline-content")
+                        .removeClass("is-hidden")
+                        .addClass("bounce-in");
+                }
+            });
+        });
     });
-  });
-});
 
 </script>
 
-	</body>
+</body>
 </html>
 
