@@ -4,6 +4,7 @@ from django.db import models
 class Codes(models.Model):
     code_image = models.ImageField(upload_to='images/', default='images/0.jpg')
     code_name = models.CharField(max_length=50, default='fudi')
+    code_image_name = models.CharField(max_length=50, default='fudi')
     code_description = models.CharField(max_length=500, default='fudi')
     code_url = models.CharField(max_length=500, default='fudi')
 
@@ -32,12 +33,13 @@ class Advices(models.Model):
 
 
 class Works(models.Model):
-    name = models.CharField(max_length=50, default='fudi')
+    work_name = models.CharField(max_length=50, default='work sample')
     work_image = models.ImageField(upload_to='images/', default='images/0.jpg')
-    type = models.CharField(max_length=50, default='iOS')
+    work_image_name = models.CharField(max_length=50, default='fudi')
+    work_type = models.CharField(max_length=50, default='iOS')
 
     def __str__(self):
-        return self.name
+        return self.work_name
 
 
 class Category(models.Model):
@@ -59,6 +61,8 @@ class Skill(models.Model):
 class Person(models.Model):
     main_image = models.ImageField(upload_to='images/', default='images/0.jpg')
     personal_image = models.ImageField(upload_to='images/', default='images/0.jpg')
+    main_image_name = models.CharField(max_length=20, default='Lee')
+    personal_image_name = models.CharField(max_length=20, default='Lee')
     candidate_name = models.CharField(max_length=20, default='Lee')
     short_summary = models.CharField(max_length=200, default='Im a software engineer')
     summary = models.CharField(max_length=1000, default='Im a software engineer')
