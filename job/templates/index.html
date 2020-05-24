@@ -105,7 +105,7 @@
     <!-- ====== End Navgition ======  -->
 
     <!-- ====== Header ======  -->
-    <header style="background: url('{{ person.main_image.url }}')" id="home" class="header"
+    <header style="background: url('https://portfo-images.s3-eu-west-1.amazonaws.com/main.jpg')" id="home" class="header"
             data-stellar-background-ratio="0.5">
         <!-- header content -->
         <div class="caption v-middle text-center">
@@ -130,7 +130,7 @@
                     <!-- hero image -->
                     <div class="col-md-4">
                         <div class="hero-img">
-                            <img src="{{ person.personal_image.url }}" alt="image">
+                            <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ person.personal_image_name }}.jpg" alt="image">
                         </div>
                     </div>
 
@@ -161,7 +161,6 @@
 
                 <div class="row">
                     {% for advice in advices.all %}
-
                         <!-- services items -->
                         <div class="serv-row">
                             <div class="col-md-4">
@@ -173,8 +172,6 @@
                             </div>
                         </div>
                     {% endfor %}
-
-
                 </div>
             </div>
         </div>
@@ -293,19 +290,17 @@
 
                         <!-- gallery item -->
                         <div class="col-md-4 item-img {{ work.type }}">
-                            <img src="{{ work.work_image.url }}" alt="image">
+                            <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ work.work_image_name }}.jpg" alt="image">
                             <div class="item-img-overlay">
                                 <span class="v"></span>
                                 <span class="x"></span>
                                 <div class="v-middle">
-                                    <a href="{{ work.work_image.url }}"><span class="icon-scope"></span></a>
-                                    <h5>{{ work.name }}</h5>
+                                    <a href="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ work.work_image_name }}.jpg"><span class="icon-scope"></span></a>
+                                    <h5>{{ work.work_name }}</h5>
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
-
-
                 </div>
             </div>
         </div>
@@ -365,7 +360,7 @@
                     <div class="col-md-4 ">
                         <a href="{{ code.code_url }}">
                             <div class="card mb-4 shadow-sm code-section">
-                                <img class="card-img-top" src="{{ code.code_image.url }}">
+                                <img class="card-img-top" src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ code.code_image_name }}.jpg">
                                 <div class="card-body">
                                     <p class="card-title" style="font-size:20px">{{ code.code_name }}</p>
                                     <p class="card-text">{{ code.code_description }}</p>
