@@ -188,7 +188,7 @@
             </div>
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-picture">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
+                    <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/icons8-amazon-128.png" alt="Picture">
                 </div>
 
                 <div class="cd-timeline-content">
@@ -207,7 +207,7 @@
 
             <div class="cd-timeline-block">
                 <div class="cd-timeline-img cd-movie">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-movie.svg" alt="Movie">
+                    <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/icons8-take-away-food-100.png" alt="Movie">
                 </div>
 
                 <div class="cd-timeline-content">
@@ -291,7 +291,7 @@
                     {% for work in works.all %}
                         <!-- gallery item -->
                         <div class=" square col-md-4 item-img {{ work.work_type }}">
-                            <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ work.work_image_name }}.jpg" alt="image" style="max-height: 100%;">
+                            <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ work.work_image_name }}.jpg" alt="image" style="max-width: 100%;max-height: 100%;object-fit: cover">
                             <div class="item-img-overlay">
                                 <span class="v"></span>
                                 <span class="x"></span>
