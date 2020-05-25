@@ -1051,3 +1051,8 @@ header h1 {
 	padding-top: 1em;
 
 }
+
+.square {
+  width:370px;
+  height:370px;
+}

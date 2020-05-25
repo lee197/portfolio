@@ -12,6 +12,7 @@ python-dotenv = "*"
 psycopg2-binary = "*"
 django = "*"
 gunicorn = "*"
+sendgrid = "*"
 
 [requires]
 python_version = "3.8"
