@@ -49,7 +49,7 @@ $(function (){
 
     // typejs
     $('.caption h4 span').typed({
-        strings: ["Creative Designer","Fornt End Developer","Photographic"],
+        strings: ["an iOS Engineer"," an Android Engineer","a Python Web Engineer", "a Drone Photographer"],
         loop: true,
         startDelay: 1000,
         backDelay: 2000

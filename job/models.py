@@ -65,7 +65,7 @@ class Person(models.Model):
     personal_image_name = models.CharField(max_length=20, default='Lee')
     candidate_name = models.CharField(max_length=20, default='Lee')
     short_summary = models.CharField(max_length=200, default='Im a software engineer')
-    summary = models.CharField(max_length=1000, default='Im a software engineer')
+    summary = models.TextField(max_length=1000, default='Im a software engineer')
 
     def __str__(self):
         return self.candidate_name
