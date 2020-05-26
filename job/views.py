@@ -7,7 +7,7 @@ def index(request):
     skills = Skill.objects
     categories = Category.objects
     works = Works.objects
-    advices = Advices.objects
+    advices = Advices.objects.order_by("rank")
     experiences = Experience.objects
     codes = Codes.objects
     return render(request, 'index.html', {'person': lee,
