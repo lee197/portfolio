@@ -283,8 +283,8 @@
                 <div class="gallery text-center">
                     {% for work in works.all %}
                         <!-- gallery item -->
-                        <div class=" square col-md-4 item-img {{ work.work_type }}">
-                            <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ work.work_image_name }}.jpg" alt="image" style="max-width: 100%;max-height: 100%;object-fit: cover">
+                        <div class=" col-md-4 item-img {{ work.work_type }}">
+                            <img class="square" src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ work.work_image_name }}.jpg" alt="image">
                             <div class="item-img-overlay">
                                 <span class="v"></span>
                                 <span class="x"></span>
@@ -354,7 +354,7 @@
                     <div class="col-md-4 ">
                         <a href="{{ code.code_url }}">
                             <div class="card mb-4 shadow-sm code-section">
-                                <img class="card-img-top" src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ code.code_image_name }}.jpg">
+                                <img class="card-img-top square" src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ code.code_image_name }}.jpg">
                                 <div class="card-body">
                                     <p class="card-title" style="font-size:20px">{{ code.code_name }}</p>
                                     <p class="card-text">{{ code.code_description }}</p>
