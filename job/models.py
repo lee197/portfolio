@@ -37,6 +37,7 @@ class Works(models.Model):
     work_image = models.ImageField(upload_to='images/', default='images/0.jpg')
     work_image_name = models.CharField(max_length=50, default='fudi')
     work_type = models.CharField(max_length=50, default='iOS')
+    work_url = models.CharField(max_length=500, default='https://medium.com/@lee5187415')
 
     def __str__(self):
         return self.work_name
