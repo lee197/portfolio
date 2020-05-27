@@ -279,12 +279,11 @@
 {#                    <span data-filter='.web'>Web</span>#}
 {#                </div>#}
 
-                <!-- gallery -->
+                <!-- work/articles -->
                 <div class="gallery text-center">
                     {% for work in works.all %}
-                        <!-- gallery item -->
                         <div class=" col-md-4 item-img {{ work.work_type }}">
-                            <img class="square" src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ work.work_image_name }}.jpg" alt="image">
+                            <img class="square" src="{{ work.work_image_url }}" alt="image">
                             <a href={{ work.work_url }}>
                             <div class="item-img-overlay">
                                 <span class="v"></span>
