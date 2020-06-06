@@ -16,9 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-import job
-from job.views import home
-from job.views import index
+from job.views import home, index, email, detail
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('home', home, name='home'),
-    path('jobs/<int:job_id>', job.views.detail, name='detail'),
+    path('jobs/<int:job_id>', detail, name='detail'),
+    path('email', email, name='email')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
