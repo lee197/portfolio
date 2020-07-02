@@ -10,7 +10,7 @@ pillow = "*"
 psycopg2 = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
-django = "*"
+django = ">=3.0.7"
 gunicorn = "*"
 sendgrid = "*"
 

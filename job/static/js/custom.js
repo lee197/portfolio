@@ -174,7 +174,7 @@ $(window).on("load",function (){
 
     $('#contact-form').on('submit', function (e) {
         if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
+            var url = "http://127.0.0.1:8000/email";
 
             $.ajax({
                 type: "POST",
@@ -184,6 +184,8 @@ $(window).on("load",function (){
                 {
                     var messageAlert = 'alert-' + data.type;
                     var messageText = data.message;
+                    console.log(messageAlert)
+                    console.log(messageText)
 
                     var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
                     if (messageAlert && messageText) {

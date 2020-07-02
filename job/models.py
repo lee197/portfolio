@@ -13,11 +13,11 @@ class Codes(models.Model):
 
 
 class Experience(models.Model):
-    ex_image = models.ImageField(upload_to='images/', default='images/0.jpg')
+    experience_image = models.ImageField(upload_to='images/', default='images/0.jpg')
     company_name = models.CharField(max_length=50, default='fudi')
-    ex_description = models.CharField(max_length=500, default='fudi')
+    experience_description = models.CharField(max_length=500, default='fudi')
     date = models.DateField()
-    position = models.CharField(max_length=5, default='left')
+    job_position = models.CharField(max_length=5, default='left')
 
     def __str__(self):
         return self.company_name
@@ -37,6 +37,8 @@ class Works(models.Model):
     work_image = models.ImageField(upload_to='images/', default='images/0.jpg')
     work_image_name = models.CharField(max_length=50, default='fudi')
     work_type = models.CharField(max_length=50, default='iOS')
+    work_url = models.CharField(max_length=500, default='https://medium.com/@lee5187415')
+    work_image_url = models.CharField(max_length=500, default='https://miro.medium.com/fit/c/256/256/1*HD1OpqerWv8wo91EEoIIYA.jpeg')
 
     def __str__(self):
         return self.work_name
