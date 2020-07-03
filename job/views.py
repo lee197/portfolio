@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_exempt
 from job import email_sender
 import json
 
-from job.models import Job, Person, Skill, Category, Works, Advices, Experience, Codes
+from job.models import Project, Person, Skill, Category, Works, Advices, Experience, Codes
 
 
 def index(request):
@@ -42,10 +42,10 @@ def email(request):
 
 
 def home(request):
-    jobs = Job.objects
-    return render(request, 'home.html', {'jobs': jobs})
+    projects = Project.objects
+    return render(request, 'home.html', {'projects': projects})
 
 
-def detail(request, job_id):
-    job_detail = get_object_or_404(Job, pk=job_id)
-    return render(request, 'detail.html', {'job': job_detail})
+def detail(request, project_id):
+    project_detail = get_object_or_404(Project, pk=project_id)
+    return render(request, 'detail.html', {'project': project_detail})
