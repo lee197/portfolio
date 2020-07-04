@@ -11,10 +11,19 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+import socket
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# If the host name starts with 'live', DJANGO_HOST = "production"
+if socket.gethostname().startswith('leeqii'):
+    DJANGO_HOST = "production"
+# Else if host name starts with 'test', set DJANGO_HOST = "test"
+elif socket.gethostname().startswith('test'):
+    DJANGO_HOST = "testing"
+else:
+# If host doesn't match, assume it's a development server, set DJANGO_HOST = "development"
+    DJANGO_HOST = "development"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -45,7 +54,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'job'
+    'job',
+    'storages',
+    's3direct'
 ]
 
 MIDDLEWARE = [
@@ -126,12 +137,20 @@ USE_L10N = True
 
 USE_TZ = True
 
+AWS_ACCESS_KEY_ID = 'AKIA3XEG73XWLVQNOQU2'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'portfo-images'
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
 
-STATIC_URL = '/static/'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
+DEFAULT_FILE_STORAGE = 'portfolio.storage_backends.MediaStorage'  # <-- here is where we reference it
