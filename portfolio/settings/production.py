@@ -32,7 +32,7 @@ else:
 SECRET_KEY = '0yk+8+4o7y8hjluq5y8+6oqqq!3*klnsipnbynp0c8*5t6zb&i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['leeqi-portfolio.herokuapp.com', '127.0.0.1', 'localhost', 'www.leeqii.com']
 
@@ -137,8 +137,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-AWS_ACCESS_KEY_ID = 'AKIA3XEG73XWLVQNOQU2'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = 'portfo-images'
 
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
@@ -148,9 +148,9 @@ AWS_S3_OBJECT_PARAMETERS = {
 AWS_LOCATION = 'static'
 
 STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, '../../static')
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
-DEFAULT_FILE_STORAGE = 'portfolio.storage_backends.MediaStorage'  # <-- here is where we reference it
+DEFAULT_FILE_STORAGE = 'portfolio.storage_backends.MediaStorage'
