@@ -64,7 +64,9 @@ class Project(models.Model):
     title = models.CharField(max_length=50, default="Lee's project")
     subtitle = models.CharField(max_length=50, default="Lee's project")
     video_link = models.CharField(max_length=50, default='Lee')
-    summary = models.TextField(max_length=500)
+    store_link = models.CharField(max_length=100, default='Lee')
+
+    summary = models.TextField(max_length=1000)
 
     def __str__(self):
         return self.title

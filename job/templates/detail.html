@@ -18,6 +18,7 @@
     <link rel="stylesheet" href={% static 'css/bootstrap-datepicker.css' %}>
     <link rel="stylesheet" href={% static 'css/animate.css' %}>
     <link rel="stylesheet" href={% static 'fonts/flaticon/font/flaticon.css' %}>
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
 
     <link rel="stylesheet" href={% static 'css/aos.css' %}>
 
@@ -32,6 +33,19 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
+  <div class="slide-one-item home-slider owl-carousel">
+
+        <div class="site-blocks-cover inner-page overlay" style="background-image: url({{ project.main_image.url }});"
+             data-aos="fade" data-stellar-background-ratio="0.5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 main_page_black">
+                        <h2 style= "font-size: 45px; color:white !important">{{ project.title}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <div class="site-wrap">
 
@@ -44,77 +58,46 @@
         <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
 
-    <div class="slide-one-item home-slider owl-carousel">
-
-        <div class="site-blocks-cover inner-page overlay" style="background-image: url({{ project.main_image.url }});"
-             data-aos="fade" data-stellar-background-ratio="0.5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7 main_page_black">
-                        <h2 style="color:white; font-size: 45px">{{ project.title}}</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!--    <div class="slant-1"></div>-->
 
     <div class="site-half first-section" id="about">
-        <div class="img-bg-1" data-aos="fade"></div>
         <div class="container">
             <div class="row no-gutters align-items-stretch">
                 <div class="col-lg-5 ml-lg-auto py-5">
-                    <span class="caption d-block mb-2 font-secondary font-weight-bold">Leading construction solution</span>
+                    <span class="caption d-block mb-2 font-secondary font-weight-bold" style= "color:dimgrey !important">Leading construction solution</span>
                     <h2 class="site-section-heading text-uppercase font-secondary mb-5">What is this app about?</h2>
-{#                    <h5> This is an app running on the iPad. It is developed to operate the DJI drone to fly on the calculated path to do inspection High-raise.</h5>#}
-{#                    <h5> The operator set the fly points on the building edge. Then the app will calculate the fly path.</h5>#}
-{#                    <h5> After the path has been calculated, it will send the drone fly points with photo shot task.</h5>#}
-{#                    <h5> Operator click fly button, the drone will execute the task automatically.</h5>#}
-                    <h5> {{ project.summary}} </h5>
-
+                    <p class="mb-20"> {{ project.summary|linebreaks}} </p>
+       {% if project.store_link != 'Lee' %}
+            <a href="{{ project.store_link }}" class="btn btn-store">
+                <span class="fa fa-apple fa-3x pull-left"></span>
+                <span class="btn-label">Download on the</span>
+                <span class="btn-caption">App Store</span>
+            </a>
+        {% endif %}
                 </div>
-              <div>
-                <iframe width="620" height="415"
-                        src="{{ project.video_link}}" frameborder="0" allowfullscreen>
+                {% if project.video_link != 'Lee' %}
 
-{#                   src="https://www.youtube.com/embed/09Ua_ROapxw" frameborder="0" allowfullscreen>#}
+              <div>
+                <iframe width="620" height="415" style="margin-left: 40px"
+                        src="{{ project.video_link}}" frameborder="0" allowfullscreen>
                 </iframe>
               </div>
+                {% else %}
+                    <img  width="620" height="415" style="margin-left: 40px" src="{{ project_image.small_image.url }}" alt="Image" class="img-fluid">
+                    {% endif %}
+
             </div>
         </div>
     </div>
-
-{#    <div class="site-half block">#}
-{#        <div class="img-bg-1 right" style="background-image: url('images/whatwedo.jpg');" data-aos="fade"></div>#}
-{#        <div class="container">#}
-{#            <div class="row no-gutters align-items-stretch">#}
-{#                <div class="col-lg-5 mr-lg-auto py-5">#}
-{#                    <span class="caption d-block mb-2 font-secondary font-weight-bold">trading&service</span>#}
-{#                    <h2 class="site-section-heading text-uppercase font-secondary mb-5 ">What do we do?</h2>#}
-{#                    <p>We import high quality ingredients and distribute to our many customers around the globe.</p>#}
-{#                    <p>We want to ensure that we provide a service that is efficient and inclusive. We are eager to make#}
-{#                        our customers feel involved at every step of the way.</p>#}
-{#                    <p>If you are seeking any particular product, our procurement team will assist to provide you with#}
-{#                        the best products and service.</p>#}
-{#                    <p>Working with our partners who provide personalized customer service and logistic support so we#}
-{#                        can meet your expectations.</p>#}
-{#                    <p>Lyne Chemicals believes in bringing excellent products to the market that will make a positive#}
-{#                        impact on consumers’ lives.</p>#}
-{#                </div>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-
-    <div>
+       {% if project.store_link == 'Lee' %}
         <div class="container first-section" id="culture">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <span class="caption d-block mb-2 font-secondary font-weight-bold">Screen Shots</span>
-                    <h2 class="site-section-heading text-uppercase text-center font-secondary">What you can see</h2>
+                    <h2 class="site-section-heading text-uppercase text-center font-secondary">What does the app looks like</h2>
                 </div>
             </div>
-            <div class="row">
+              <div class="row">
                 <div class="col-md-12 block-13 nav-direction-white">
                     <div class="nonloop-block-13 owl-carousel">
                 {% for project_image in project_images.all %}
@@ -131,118 +114,27 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="site-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-12 text-center" data-aos="fade" id="services">
-                    <span class="caption d-block mb-2 font-secondary font-weight-bold">Our Services</span>
-                    <h2 class="site-section-heading text-uppercase text-center font-secondary">What we offer</h2>
-                </div>
-            </div>
-            <div class="row border-responsive">
-                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="">
-                    <div class="text-center">
-                        <span class="flaticon-money-bag display-4 d-block mb-3 text-primary"></span>
-                        <h3 class="text-uppercase h4 mb-3">Procurement</h3>
-                        <p>We seek a wide range of high-quality ingredients in the food & pharmaceutical industry</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-center">
-                        <span class="flaticon-box display-4 d-block mb-3 text-primary"></span>
-                        <h3 class="text-uppercase h4 mb-3">Logistics</h3>
-                        <p>We work closely with our logistic partner to deliver our products upon your request</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-center">
-                        <span class="flaticon-medal display-4 d-block mb-3 text-primary"></span>
-                        <h3 class="text-uppercase h4 mb-3">Customer Service </h3>
-                        <p> Our actions are driven by customers. We aim to provide excellent and personalized support to
-                            everyone.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 border-right" data-aos="fade-up" data-aos-delay="">
-                    <div class="text-center">
-                        <span class="flaticon-lab display-4 d-block mb-3 text-primary"></span>
-                        <h3 class="text-uppercase h4 mb-3">R&D</h3>
-                        <p>Taking our hands, seeking and exploring any new ideas and possibilities together with
-                            you.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="page-footer font-small teal pt-4 container-fluid bg-grey py-4">
-
-        <!-- Footer Text -->
-        <div class="container-fluid text-center text-md-left">
-
-            <!-- Grid row -->
-            <div class="row">
-
-                <!-- Grid column -->
-                <div class=" divBottomNav ms-dialogHidden col-md-6 mb-md-0 mb-3" id="trBottomNav">
-
-                    <table border="0" cellspacing="0" cellpadding="0" class="bottomNav bottomNavLinks">
-                        <tbody>
-                        <tr style="width:100%; height:20px;">
-                            <td align="center" valign="middle"><a href="terms%20condition.html">Standard Terms &
-                                Conditions of Sale</a><span class="bottomNavDivider">|</span></td>
-                            <td align="center" valign="middle"><a href="privacy%20policy.html">Privacy Policy</a><span
-                                    class="bottomNavDivider">|</span></td>
-                            <td align="center" valign="middle"><a href="#contact">Contact Us</a><span
-                                    class="bottomNavDivider">|</span></td>
-                            <!--                              <td align="center" valign="middle"><a href="https://www.eastman.com/Pages/Site_Index.aspx">Copyright 2020 Lyne Chemicals Limited</a><span class="bottomNavDivider">|</span></td>-->
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <table border="0" cellspacing="0" width="800px" cellpadding="0" class="bottomNav">
-                        <tbody>
-                        <tr>
-                            <td align="left" valign="middle" width="210px">© 2020 Lyne Chemicals LTD. All rights
-                                reserved.
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none pb-3">
-
-                <!-- Grid column -->
-                <div style="margin-top: 20px" class="col-md-6 mb-md-0 ">
-
-                    <!-- Content -->
-                    <h4 class="font-weight-bold text-white" style="text-align: center; ">Exploring new ideas for better
-                        health</h4>
-
-                </div>
-                <!-- Grid column -->
-
-            </div>
-            <!-- Grid row -->
 
         </div>
-        <!-- Footer Text -->
+        {% endif %}
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">
-            <a href="#" class="text-white"> </a>
-        </div>
-        <!-- Copyright -->
-
-    </footer>
-    <!-- Footer -->
 </div>
+
+
+<!--====== Footer ======-->
+    <footer class="first-section page-footer font-small teal pt-4 container-fluid bg-black py-4">
+    <div class="container">
+
+        <div class="social-icon">
+            <a href="https://www.facebook.com/profile.php?id=100004439116516"><span><i class="fa fa-facebook" aria-hidden="true" ></i></span></a>
+            <span><i class="fa fa-twitter" aria-hidden="true"></i></span></a>
+            <a href="https://www.linkedin.com/in/lee-qi/"><span><i class="fa fa-linkedin" aria-hidden="true" ></i></span></a>
+            <a href="https://github.com/lee197"><span><i class="fa fa-github" aria-hidden="true"></i></span></a>
+        </div>
+    </div>
+</footer>
+<!--====== End Footer ======-->
+
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
 <script src="{% static 'js/jquery-ui.js' %}"></script>
