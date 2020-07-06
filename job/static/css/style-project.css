@@ -2404,8 +2404,7 @@ footer .social-icon span:hover{
 	object-fit: cover
 }
 
-.col {
-  flex: 1;
-  padding: 1em;
-  border: solid;
+.video {
+    width:390px;
+    height:390px;
 }

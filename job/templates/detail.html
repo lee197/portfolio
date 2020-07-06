@@ -49,16 +49,7 @@
 
 <div class="site-wrap">
 
-    <div class="site-mobile-menu">
-        <div class="site-mobile-menu-header">
-            <div class="site-mobile-menu-close mt-3">
-                <span class="icon-close2 js-menu-toggle"></span>
-            </div>
-        </div>
-        <div class="site-mobile-menu-body"></div>
-    </div> <!-- .site-mobile-menu -->
-
-    <!--    <div class="slant-1"></div>-->
+     <div class="slant-1"></div>
 
     <div class="site-half first-section" id="about">
         <div class="container">
@@ -77,11 +68,9 @@
                 </div>
                 {% if project.video_link != 'Lee' %}
 
-              <div>
-                <iframe width="620" height="415" style="margin-left: 40px"
-                        src="{{ project.video_link}}" frameborder="0" allowfullscreen>
+                <iframe width="620" height="415" style="margin-left: 40px; margin-right: 0px"
+                        src="{{ project.video_link}}" allowfullscreen>
                 </iframe>
-              </div>
                 {% else %}
                     <img  src="{{ project.image_video.url }}" alt = "image", style="width:620px; height: auto; margin-left: 40px">
                     {% endif %}
@@ -89,6 +78,8 @@
             </div>
         </div>
     </div>
+     <div class="slant-1"></div>
+
        {% if project.is_screen %}
         <div class="container first-section" id="culture">
             <div class="row">
