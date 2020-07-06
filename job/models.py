@@ -64,7 +64,9 @@ class Project(models.Model):
     title = models.CharField(max_length=50, default="Lee's project")
     subtitle = models.CharField(max_length=50, default="Lee's project")
     video_link = models.CharField(max_length=50, default='Lee')
+    image_video = models.ImageField(upload_to='img/', default='img/0.jpg')
     store_link = models.CharField(max_length=100, default='Lee')
+    is_screen = models.BooleanField(default=True)
 
     summary = models.TextField(max_length=1000)
 
