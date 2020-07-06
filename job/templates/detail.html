@@ -64,7 +64,7 @@
         <div class="container">
             <div class="row no-gutters align-items-stretch">
                 <div class="col-lg-5 ml-lg-auto py-5">
-                    <span class="caption d-block mb-2 font-secondary font-weight-bold" style= "color:dimgrey !important">Leading construction solution</span>
+                    <span class="caption d-block mb-2 font-secondary font-weight-bold" style= "color:dimgrey !important">{{ project.subtitle}}</span>
                     <h2 class="site-section-heading text-uppercase font-secondary mb-5">What is this app about?</h2>
                     <p class="mb-20"> {{ project.summary|linebreaks}} </p>
        {% if project.store_link != 'Lee' %}
@@ -83,13 +83,13 @@
                 </iframe>
               </div>
                 {% else %}
-                    <img  width="620" height="415" style="margin-left: 40px" src="{{ project_image.small_image.url }}" alt="Image" class="img-fluid">
+                    <img  width="620" height="415" style="margin-left: 40px; position: absolute" src="{{ project.image_video.url }}" alt="Image" class="img-fluid">
                     {% endif %}
 
             </div>
         </div>
     </div>
-       {% if project.store_link == 'Lee' %}
+       {% if project.is_screen %}
         <div class="container first-section" id="culture">
             <div class="row">
                 <div class="col-md-12 text-center">
