@@ -188,7 +188,7 @@
             <div class="row">
                 {% for project in projects.all %}
                             <div class="item-img col-md-4 text-center">
-                                <img class="projects_square" src="{{ project.project_image.url }}">
+                                <img class="projects_square" alt="image" src="{{ project.project_image.url }}">
                                 <a href="{% url 'detail' project.id %}">
                                 <div class="item-img-overlay">
                                 <div class="v-middle">

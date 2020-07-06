@@ -2395,3 +2395,17 @@ footer .social-icon span:hover{
 .btn-store .btn-caption {
   font-size: 24px;
 }
+
+.projects_square {
+  width:390px;
+  height:390px;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover
+}
+
+.col {
+  flex: 1;
+  padding: 1em;
+  border: solid;
+}
