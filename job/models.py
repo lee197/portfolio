@@ -4,23 +4,11 @@ from django.db import models
 class Codes(models.Model):
     code_image = models.ImageField(upload_to='images/', default='images/0.jpg')
     code_name = models.CharField(max_length=50, default='fudi')
-    code_image_name = models.CharField(max_length=50, default='fudi')
     code_description = models.CharField(max_length=500, default='fudi')
     code_url = models.CharField(max_length=500, default='fudi')
 
     def __str__(self):
         return self.code_name
-
-
-class Experience(models.Model):
-    experience_image = models.ImageField(upload_to='images/', default='images/0.jpg')
-    company_name = models.CharField(max_length=50, default='fudi')
-    experience_description = models.CharField(max_length=500, default='fudi')
-    date = models.DateField()
-    job_position = models.CharField(max_length=5, default='left')
-
-    def __str__(self):
-        return self.company_name
 
 
 class Advices(models.Model):
@@ -35,10 +23,8 @@ class Advices(models.Model):
 class Works(models.Model):
     work_name = models.CharField(max_length=50, default='work sample')
     work_image = models.ImageField(upload_to='images/', default='images/0.jpg')
-    work_image_name = models.CharField(max_length=50, default='fudi')
     work_type = models.CharField(max_length=50, default='iOS')
     work_url = models.CharField(max_length=500, default='https://medium.com/@lee5187415')
-    work_image_url = models.CharField(max_length=500, default='https://miro.medium.com/fit/c/256/256/1*HD1OpqerWv8wo91EEoIIYA.jpeg')
 
     def __str__(self):
         return self.work_name
@@ -61,10 +47,8 @@ class Skill(models.Model):
 
 
 class Person(models.Model):
-    main_image = models.ImageField(upload_to='images/', default='images/0.jpg')
-    personal_image = models.ImageField(upload_to='images/', default='images/0.jpg')
-    main_image_name = models.CharField(max_length=20, default='Lee')
-    personal_image_name = models.CharField(max_length=20, default='Lee')
+    main_image = models.ImageField(upload_to='img/', default='img/0.jpg')
+    personal_image = models.ImageField(upload_to='img/', default='img/0.jpg')
     candidate_name = models.CharField(max_length=20, default='Lee')
     short_summary = models.CharField(max_length=200, default='Im a software engineer')
     summary = models.TextField(max_length=1000, default='Im a software engineer')
@@ -74,9 +58,28 @@ class Person(models.Model):
 
 
 # Create your models here.
-class Job(models.Model):
-    image = models.ImageField(upload_to='images/')
-    summary = models.CharField(max_length=200)
+class Project(models.Model):
+    project_image = models.ImageField(upload_to='img/', default='img/0.jpg')
+    main_image = models.ImageField(upload_to='img/', default='img/0.jpg')
+    title = models.CharField(max_length=50, default="Lee's project")
+    subtitle = models.CharField(max_length=50, default="Lee's project")
+    video_link = models.CharField(max_length=50, default='Lee')
+    image_video = models.ImageField(upload_to='img/', default='img/0.jpg')
+    store_link = models.CharField(max_length=100, default='Lee')
+    is_screen = models.BooleanField(default=True)
+
+    summary = models.TextField(max_length=1000)
 
     def __str__(self):
-        return self.summary
+        return self.title
+
+
+class ProjectImage(models.Model):
+    title = models.CharField(max_length=50, default='Lee')
+    small_image = models.ImageField(upload_to='img/', default='img/0.jpg')
+    big_image = models.ImageField(upload_to='img/', default='img/0.jpg')
+    summary = models.TextField(max_length=500, default='Lee')
+    project = models.ForeignKey(Project, default=None, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

@@ -108,7 +108,7 @@
     <!-- ====== End Navgition ======  -->
 
     <!-- ====== Header ======  -->
-    <header style="background: url('https://portfo-images.s3-eu-west-1.amazonaws.com/main.jpg')" id="home" class="header"
+    <header style="background: url({{ person.main_image.url }})" id="home" class="header"
             data-stellar-background-ratio="0.5">
         <!-- header content -->
         <div class="caption v-middle text-center">
@@ -133,7 +133,7 @@
                     <!-- hero image -->
                     <div class="col-md-4">
                         <div class="hero-img">
-                            <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ person.personal_image_name }}.jpg" alt="image">
+                            <img src="{{ person.personal_image.url }}" alt="image">
                         </div>
                     </div>
 
@@ -179,83 +179,30 @@
         </div>
         <!--====== End: What I can give advices to ======-->
 
-
-        <!--====== MY Experience ======-->
-
-        <section id="cd-timeline" class="cd-container timeline_body section-padding">
+        <!--====== MY Projects ======-->
+        <section id="projects" class="projects section-padding">
+        <div class="container">
             <div class="section-head text-center">
-                <h5 class="tit">What I learnt from my experience !</h5>
+                <h5 class="tit">My Projects !</h5>
             </div>
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-picture">
-                    <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/icons8-amazon-128.png" alt="Picture">
-                </div>
-
-                <div class="cd-timeline-content">
-                    <h3>Amazon Cork</h3>
-
-                    <timeline_h2>Investigation Specialist</timeline_h2>
-                    <p>My responsibility was checking the amazon seller's documentation to ensure the seller was safe and qualified. </p>
-                    <p>The Amazon culture is amazing and complete. It went through all of the decisions to make sure you work as a leader. </p>
-                    <p>To be a leader, you have to be smart and make the right decisions to serve your customers than simply do what your boss tells you to do.</p>
-
-                    <span class="cd-date">2015/June/14 -- 2016/July/15</span>
-                </div>
+            <div class="row">
+                {% for project in projects.all %}
+                            <div class="item-img col-md-4 text-center">
+                                <img class="projects_square" alt="image" src="{{ project.project_image.url }}">
+                                <a href="{% url 'detail' project.id %}">
+                                <div class="item-img-overlay">
+                                <div class="v-middle">
+                                    <h5>{{ project.title }}</h5>
+                                    <p>{{ project.subtitle }}</p>
+                                </div>
+                            </div>
+                                </a>
+                            </div>
+                {% endfor %}
             </div>
-
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-movie">
-                    <img src="https://portfo-images.s3-eu-west-1.amazonaws.com/icons8-take-away-food-100.png" alt="Movie">
-                </div>
-
-                <div class="cd-timeline-content">
-                    <h3>Fudi&more</h3>
-                    <timeline_h2>iOS Engineer</timeline_h2>
-                    <p>I was the iOS Engineer and co-founder who developed the app from scratch.</p>
-                    <p>Also, I drafted the business plan, helped to make strategic decisions and did a few marketing projects.</p>
-                    <p>As an iOS engineer, I published my first industry app. The code was not perfect but I improved my learning and problem-solving skills. </p>
-                    <p>As a co-founder, I have witnessed the company's build-up. Just like other companies, we did have setbacks. However, our success was how quickly you respond and adapt from setbacks. </p>
-
-                    <span class="cd-date">2016/July/15 -- 2018/June/1</span>
-                </div>
-            </div>
-
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-picture">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg" alt="Picture">
-                </div>
-
-                <div class="cd-timeline-content">
-                    <h3>Boonray Technology</h3>
-                    <timeline_h2>iOS/Android Engineer</timeline_h2>
-                    <p>As a mobile engineer, I developed android/iOS apps to operate the drone.  I regard the drone as the 3rd human eye to see the world from the height we can't reach. </p>
-                    <p> It makes me feel like you are seeing the world on the giants' shoulder. Unfortunately, the drone can not do much work but take pictures. I believe it will be equipped with hands in the future.</p>
-                    <p>I started developing android apps there. I can still remember when the manager told me to develop the android app. I wanted to say no because I didn't know if I could make it. I wanted to say yes because I knew I liked learning new technologies. </p>
-                    <p>Meanwhile, as an observer to see the company making management decisions. I gained a lot of experience and realized how important the culture plays in a company.</p>
-                    <span class="cd-date">2018/Nov/11 -- 2019/Oct/15</span>
-                </div>
-            </div>
-
-            <div class="cd-timeline-block">
-                <div class="cd-timeline-img cd-location">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.svg" alt="Location">
-                </div>
-
-                <div class="cd-timeline-content">
-                    <h3>Lyne Chemicals LTD</h3>
-                    <timeline_h2>Software Engineer</timeline_h2>
-
-                    <p>I started learning python as a freelancer. As I have learnt swift and java, learning python was quick and easy. </p>
-                    <p>It took me a while to adapt to being an API-back-end developer while I handled authentication, okta API, system design and CI/CD. Overall, it's pretty easy to develop Django API and Website. </p>
-                    <p>So far, I believe my client is happy for what I have created. We strictly implemented scrum development. We had good communication throughout the process which ensured we were in the right direction.</p>
-
-                    <span class="cd-date">2020/Jan/11 -- Present</span>
-                </div>
-            </div>
-
-        </section>
-        <!--====== End: MY Experience ======-->
-
+        </div>
+    </section>
+        <!--====== End: MY Projects ======-->
 
     </section>
     <!--====== End: about container ======-->
@@ -283,7 +230,7 @@
                 <div class="gallery text-center">
                     {% for work in works.all %}
                         <div class=" col-md-4 item-img {{ work.work_type }}">
-                            <img class="square" src="{{ work.work_image_url }}" alt="image">
+                            <img class="square" src="{{ work.work_image.url }}" alt="image">
                             <a href={{ work.work_url }}>
                             <div class="item-img-overlay">
                                 <span class="v"></span>
@@ -343,7 +290,7 @@
     </section>
     <!-- ====== End skilss ======  -->
 
-    <!--====== Clients ======-->
+    <!--====== Codes ======-->
     <section id="clients" class="clients section-padding">
         <div class="container">
             <div class="section-head text-center">
@@ -354,7 +301,7 @@
                     <div class="col-md-4 ">
                         <a href="{{ code.code_url }}">
                             <div class="card mb-4 shadow-sm code-section">
-                                <img class="card-img-top square" src="https://portfo-images.s3-eu-west-1.amazonaws.com/{{ code.code_image_name }}.jpg">
+                                <img class="card-img-top square" src="{{ code.code_image.url }}">
                                 <div class="card-body">
                                     <p class="card-title" style="font-size:20px">{{ code.code_name }}</p>
                                     <p class="card-text">{{ code.code_description }}</p>
@@ -367,7 +314,7 @@
         </div>
     </section>
 
-    <!--====== End Clients ======-->
+    <!--====== End Codes ======-->
 
     <!--====== Contact ======-->
     <section id="contact" class="contact section-padding">
@@ -492,42 +439,6 @@
 
 <!-- custom js -->
 <script src="{% static 'js/custom.js' %}"></script>
-
-<script>
-
-    jQuery(document).ready(function ($) {
-        var $timeline_block = $(".cd-timeline-block");
-
-        //hide timeline blocks which are outside the viewport
-        $timeline_block.each(function () {
-            if (
-                $(this).offset().top >
-                $(window).scrollTop() + $(window).height() * 0.75
-            ) {
-                $(this)
-                    .find(".cd-timeline-img, .cd-timeline-content")
-                    .addClass("is-hidden");
-            }
-        });
-
-        //on scolling, show/animate timeline blocks when enter the viewport
-        $(window).on("scroll", function () {
-            $timeline_block.each(function () {
-                if (
-                    $(this).offset().top <=
-                    $(window).scrollTop() + $(window).height() * 0.75 &&
-                    $(this).find(".cd-timeline-img").hasClass("is-hidden")
-                ) {
-                    $(this)
-                        .find(".cd-timeline-img, .cd-timeline-content")
-                        .removeClass("is-hidden")
-                        .addClass("bounce-in");
-                }
-            });
-        });
-    });
-
-</script>
 
 </body>
 </html>
