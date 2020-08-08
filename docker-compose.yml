@@ -1,0 +1,30 @@
+ version: "3"
+
+ services:
+   app:
+     build:
+       context: .
+     ports:
+        - "8000:8000"
+     volumes:
+        - .:/portfolio
+     command: >
+        sh -c "python manage.py migrate &&
+               python manage.py runserver --settings=portfolio.settings.local 0.0.0.0:8000"
+     environment:
+       - ADVISOR_DB_NAME=portfolio-db
+       - ADVISOR_DB_USER=postgres
+       - ADVISOR_DB_PW=postgres
+       - ADVISOR_DB_HOST=db
+       - ADVISOR_DB_PORT=5432
+       - AWS_SECRET_ACCESS_KEY="RC5TJaXx5xz7io6pOBvaor60SlZNHbMgWL56kgLm"
+       - AWS_ACCESS_KEY_ID="AKIA3XEG73XWLVQNOQU2"
+
+     depends_on:
+       - db
+   db:
+     image: postgres:10-alpine
+     environment:
+       - POSTGRES_DB=portfolio-db
+       - POSTGRES_USER=postgres
+       - POSTGRES_PASSWORD=postgres

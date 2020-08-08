@@ -6,16 +6,16 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pillow = "*"
 psycopg2 = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
-django = ">=3.0.7"
 gunicorn = "*"
 sendgrid = "*"
 boto3 = "*"
 django-storages = "*"
 django-s3direct = "*"
+Pillow = "*"
+Django = ">=3.0.7"
 
 [requires]
 python_version = "3.8"

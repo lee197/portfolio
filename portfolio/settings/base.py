@@ -12,7 +12,7 @@ SECRET_KEY = '0yk+8+4o7y8hjluq5y8+6oqqq!3*klnsipnbynp0c8*5t6zb&i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
 
 from dotenv import load_dotenv
 
