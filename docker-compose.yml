@@ -10,7 +10,7 @@
         - .:/portfolio
      command: >
         sh -c "python manage.py migrate &&
-               python manage.py runserver --settings=portfolio.settings.local 0.0.0.0:8000"
+               python manage.py runserver --settings=portfolio.settings.production 0.0.0.0:8000"
      environment:
        - ADVISOR_DB_NAME=portfolio-db
        - ADVISOR_DB_USER=postgres
